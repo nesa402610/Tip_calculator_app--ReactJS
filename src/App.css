@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+    --primary: hsl(172, 67%, 45%);
+    --dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayishcyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayishcyan: hsl(185, 41%, 84%);
+    --verylight-grayishcyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+    --font-form-inputs: 24px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    background-color: var(--light-grayishcyan);
+}
+input {
+    text-align: end;
+    outline-color: var(--primary);
+    padding: 0 1rem;
+    border: none;
+    background-color: var(--verylight-grayishcyan);
+    border-radius: 3px;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dark-cyan);
+    font-family: inherit;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container {
+    width: 1440px;
 }
 
-.App-link {
-  color: #61dafb;
+main {
+    display: flex;
+    height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.calculator {
+    display: flex;
+    margin: auto;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.calculator__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex-grow: 1;
+
+}
+
+.calc__form__group {
+    display: flex;
+    flex-direction: column;
+}
+.calc__form__group label {
+    color: var(--dark-grayishcyan);
+}
+.calc__form__group--tips {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: .5rem;
+    margin-top: .5rem;
+}
+.calc__form__group--tip {
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    background-color: var(--dark-cyan);
+    border-radius: .5rem;
+}
+.calc__form__group--tip input {
+    font-size: inherit;
+    background: none;
+    outline: none;
+    color: #fff;
+    padding: 0;
+}
+.calc__form__group--tip.active {
+    background-color: var(--primary);
+    color: var(--dark-cyan);
+}
+.calculator__card {
+    flex-grow: 1;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: var(--dark-cyan);
+}
+
+.calc__card__tip--info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.calc__card__tip--title {
+    color: white;
+}
+
+.calc__card__tip--name {
+    color: var(--light-grayishcyan);
+}
+
+.calc__card__tip--person {
+    color: var(--grayish-cyan);
+    font-size: .75rem;
+}
+
+.calc__card__tip--amount {
+    font-size: 2rem;
+    color: var(--primary);
 }
