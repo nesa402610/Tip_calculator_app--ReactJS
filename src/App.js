@@ -7,33 +7,23 @@ import Card from "./components/card/card";
 const App = () => {
     const [bill, setBill] = useState(0);
     const [tip, setTip] = useState(0);
-    const [people, setPeople] = useState('');
-    const [isReset, setReset] = useState(false);
-    const setBillHandler = (value) => {
-        setBill(value);
-    };
-    const setTipHandler = (value) => {
-        setTip(value);
-    };
-    const setPeopleHandler = (value) => {
-        setPeople(value);
-    };
-    const setResetHandler = (value) => {
-        setReset(value)
+    const [people, setPeople] = useState(0);
+    const resetHandler = () => {
+        setBill(0)
+        setTip(0)
+        setPeople(0)
     };
     return (
         <>
             <main>
                 <div className="calculator">
                     <Form
-                        billHandler={setBillHandler}
-                        tipHandler={setTipHandler}
-                        peopleHandler={setPeopleHandler}
-                        reset={isReset}
-
-
+                        setBill={setBill} bill={bill}
+                        setTip={setTip} tip={tip}
+                        setPeople={setPeople} people={people}
+                        reset={resetHandler}
                     />
-                    <Card billVal={bill} tipVal={tip} people={people} resetHandler={setResetHandler}/>
+                    <Card bill={bill} tip={tip} people={people} resetHandler={resetHandler}/>
                 </div>
             </main>
         </>
